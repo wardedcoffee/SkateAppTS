@@ -1,14 +1,21 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Image } from "react-native";
 
-import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
+
 
 export default function TabThreeScreen() {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Tab Three</Text>
+             <Image style={styles.perfil} source={ require('../assets/images/Ellipse.png') }></Image>
+            <Text style={styles.title}>Mariana Q.</Text>
+            <Text>33 videos assistidos</Text>
             <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1" />
-            <EditScreenInfo path="/screens/TabThreeScreen.tsx" />
+            <Text>Informacoes pessoais</Text>
+            <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1" />
+            <Text>Nome</Text>
+            <Text>Mariana Quaresma</Text>
+            <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1" />
+            {/* <EditScreenInfo path="/screens/TabThreeScreen.tsx" /> */}
         </View>
     );
 }
@@ -16,8 +23,10 @@ export default function TabThreeScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        paddingLeft: 14,
+        backgroundColor: '#FAFAFA',
+        // alignItems: 'center',
+        // justifyContent: 'center',
     },
     title: {
         fontSize: 20,
@@ -27,5 +36,9 @@ const styles = StyleSheet.create({
         marginVertical:30,
         height: 1,
         width: '80%',
+    },
+    perfil: {
+        position: "relative",
+        // width:'50px',
     },
 });
