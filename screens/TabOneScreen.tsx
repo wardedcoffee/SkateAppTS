@@ -12,10 +12,10 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
 
       <Image source={ require('../assets/images/image_1.png') } style={styles.carrouselFirstImage}></Image>
 
-      <Text >Bunker Down</Text>
+      <Text style={styles.bunkerDown}>Bunker Down</Text>
       <Text >Alien Workshop * 2019 * 37 min</Text>
 
-      <Text>Lancamentos</Text>
+      <Text >Lancamentos</Text>
       <Text>Trilhas sonoras</Text>
       <Text>Destaque</Text>
 
@@ -40,19 +40,24 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
   },
   title: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontFamily: 'quicksand-bold',
+    fontSize: 22,
+    marginBottom: 3,
   },
   usernameTopQuestion:{
-    // position: 'absolute',
-    // width: '168px',
-    // height: '18px',
-    fontFamily: 'Quicksand',
-    fontStyle: 'normal',
+    fontFamily: 'quicksand-regular',
     fontSize: 14,
     lineHeight: 18,
     color: '#313131',
     opacity: 0.5,
+    marginBottom: 24,
+  },
+  bunkerDown:{
+    fontFamily: 'quicksand-bold',
+    fontSize: 16,
+    lineHeight: 20,
+    marginTop: 10,
+    marginBottom: 10,
   },
   separator: {
     marginVertical: 30,

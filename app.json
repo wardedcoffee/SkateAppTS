@@ -8,7 +8,7 @@
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/pexels-jan-kopřiva-3371213.jpg",
+      "image": "./assets/images/pjk_splash.png",
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
