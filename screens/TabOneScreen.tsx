@@ -1,8 +1,10 @@
+import React, { useState } from 'react';
 import { StyleSheet, Image, ScrollView } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+// import { MaterialIcons } from '@expo/vector-icons';
 
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
+import FavoriteButton from '../components/FavoriteButton';
 
 import CardShadow  from '../components/CardShadow';
 
@@ -19,17 +21,10 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
           <Image source={ require('../assets/images/image_1.png') } style={styles.carrouselFirstImage}></Image>
           <View style={styles.flexDirection}>
             <Text style={styles.bunkerDown}>Bunker Down</Text>
-            <MaterialIcons
-                  name="favorite-border"
-                  size={24}
-                  // color={Colors[colorScheme].text}
-                  style={{ marginRight: 60, marginTop: 10 }}
-                />
-            {/* <Image style={styles.favoriteBorder} source={ require('../assets/icons/favorite_border.png')}></Image> */}
+            <FavoriteButton/>
           </View>
           <Text style={styles.videoInfo}>Alien Workshop * 2019 * 37 min</Text>
         </View>
-
 
         <View style={styles.containerTabsText}>
           <Text style={styles.tabSelected}>Lancamentos</Text>
@@ -37,13 +32,70 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
           <Text style={styles.tabNotSelected}>Destaque</Text>
         </View>
 
-        <CardShadow></CardShadow>
-        <CardShadow></CardShadow>
-        <CardShadow></CardShadow>
-        <CardShadow></CardShadow>
-        <CardShadow></CardShadow>
-        <CardShadow></CardShadow>
-        <CardShadow></CardShadow>
+        <View style={{ flexDirection: 'row',  width: 320, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, justifyContent: 'space-between', }}>
+            <Image source={ require('../assets/images/image_4.png') } style={styles.cardMenorImage}></Image>
+            <View style={{ flexDirection: 'column', marginLeft: 36 }}>
+                <View style={{ flexDirection: 'row' }}>
+                    <Text style={styles.bunkerDown}>Cover Version</Text>
+                    <FavoriteButton/>
+                </View>
+                <View style={{ flexDirection: 'column', marginBottom: 8 }}>
+                    <Text style={styles.videoInfo}>Alien Workshop * 2019 * 37 min</Text>
+                    <View style={{ flexDirection:'row', marginTop: 10 }}>
+                        <Text style={styles.videoTags}>Trilha sonora</Text>
+                        <Text style={styles.videoTags}>Defon</Text>
+                    </View>
+                </View>
+            </View>
+        </View>
+        <View style={{ flexDirection: 'row',  width: 320, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, justifyContent: 'space-between', }}>
+            <Image source={ require('../assets/images/image_4.png') } style={styles.cardMenorImage}></Image>
+            <View style={{ flexDirection: 'column', marginLeft: 16 }}>
+                <View style={{ flexDirection: 'row' }}>
+                    <Text style={styles.bunkerDown}>Cover Version</Text>
+                    <FavoriteButton/>
+                </View>
+                <View style={{ flexDirection: 'column', marginBottom: 8 }}>
+                    <Text style={styles.videoInfo}>Alien Workshop * 2019 * 37 min</Text>
+                    <View style={{ flexDirection:'row', marginTop: 10 }}>
+                        <Text style={styles.videoTags}>Trilha sonora</Text>
+                        <Text style={styles.videoTags}>Defon</Text>
+                    </View>
+                </View>
+            </View>
+        </View>
+        <View style={{ flexDirection: 'row',  width: 320, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, justifyContent: 'space-between', }}>
+            <Image source={ require('../assets/images/image_4.png') } style={styles.cardMenorImage}></Image>
+            <View style={{ flexDirection: 'column', marginLeft: 16 }}>
+                <View style={{ flexDirection: 'row' }}>
+                    <Text style={styles.bunkerDown}>Cover Version</Text>
+                    <FavoriteButton/>
+                </View>
+                <View style={{ flexDirection: 'column', marginBottom: 8 }}>
+                    <Text style={styles.videoInfo}>Alien Workshop * 2019 * 37 min</Text>
+                    <View style={{ flexDirection:'row', marginTop: 10 }}>
+                        <Text style={styles.videoTags}>Trilha sonora</Text>
+                        <Text style={styles.videoTags}>Defon</Text>
+                    </View>
+                </View>
+            </View>
+        </View>
+        <View style={{ flexDirection: 'row',  width: 320, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, justifyContent: 'space-between', }}>
+            <Image source={ require('../assets/images/image_4.png') } style={styles.cardMenorImage}></Image>
+            <View style={{ flexDirection: 'column', marginLeft: 16 }}>
+                <View style={{ flexDirection: 'row' }}>
+                    <Text style={styles.bunkerDown}>Cover Version</Text>
+                    <FavoriteButton/>
+                </View>
+                <View style={{ flexDirection: 'column', marginBottom: 8 }}>
+                    <Text style={styles.videoInfo}>Alien Workshop * 2019 * 37 min</Text>
+                    <View style={{ flexDirection:'row', marginTop: 10 }}>
+                        <Text style={styles.videoTags}>Trilha sonora</Text>
+                        <Text style={styles.videoTags}>Defon</Text>
+                    </View>
+                </View>
+            </View>
+        </View>
 
       </ScrollView>
 
@@ -129,6 +181,27 @@ const styles = StyleSheet.create({
     fontSize: 14,
     margin: 0,
   },
+  videoTags:{
+    fontFamily: 'quicksand-regular',
+    textAlign: 'center',
+    fontSize: 12,
+    margin: 0,
+    backgroundColor: '#E5E5E5',
+    width: 'auto',
+    // padding: 6,
+    paddingTop: 4,
+    paddingRight: 8,
+    paddingLeft: 8,
+    paddingBottom: 6,
+    marginRight: 13,
+    borderRadius: 20,
+  },
+   decIncButton: {
+    backgroundColor: '#fff',
+    padding: 5,
+    paddingHorizontal: 12,
+    borderRadius: 4,
+  },  
   separator: {
     marginVertical: 30,
     height: 1,
@@ -142,5 +215,6 @@ const styles = StyleSheet.create({
   cardMenorImage: {
     borderTopLeftRadius: 8,
     borderBottomLeftRadius: 8, 
+    marginLeft: 16
   },
 });
