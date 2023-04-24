@@ -3,6 +3,7 @@ import { StyleSheet, Image } from 'react-native';
 import { Shadow } from 'react-native-shadow-2';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Text, View } from '../components/Themed';
+import FavoriteButtonCard from "./FavoriteButtonCard";
 
 export default function CardShadow () {
     return (
@@ -13,12 +14,7 @@ export default function CardShadow () {
                     <View style={{ flexDirection: 'column', marginLeft: 16 }}>
                         <View style={{ flexDirection: 'row' }}>
                             <Text style={styles.bunkerDown}>Cover Version</Text>
-                            <MaterialIcons
-                                name="favorite-border"
-                                size={24}
-                                // color={Colors[colorScheme].text}
-                                style={{ marginLeft: 70, marginRight: 10, marginTop: 8 }}
-                                />
+                                <FavoriteButtonCard />
                         </View>
                         <View style={{ flexDirection: 'column', marginBottom: 8 }}>
                             <Text style={styles.videoInfo}>Alien Workshop * 2019 * 37 min</Text>
@@ -57,6 +53,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 12,
         margin: 0,
+        color: '#000',
         backgroundColor: '#E5E5E5',
         width: 'auto',
         // padding: 6,

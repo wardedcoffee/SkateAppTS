@@ -32,70 +32,10 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
           <Text style={styles.tabNotSelected}>Destaque</Text>
         </View>
 
-        <View style={{ flexDirection: 'row',  width: 320, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, justifyContent: 'space-between', }}>
-            <Image source={ require('../assets/images/image_4.png') } style={styles.cardMenorImage}></Image>
-            <View style={{ flexDirection: 'column', marginLeft: 36 }}>
-                <View style={{ flexDirection: 'row' }}>
-                    <Text style={styles.bunkerDown}>Cover Version</Text>
-                    <FavoriteButton/>
-                </View>
-                <View style={{ flexDirection: 'column', marginBottom: 8 }}>
-                    <Text style={styles.videoInfo}>Alien Workshop * 2019 * 37 min</Text>
-                    <View style={{ flexDirection:'row', marginTop: 10 }}>
-                        <Text style={styles.videoTags}>Trilha sonora</Text>
-                        <Text style={styles.videoTags}>Defon</Text>
-                    </View>
-                </View>
-            </View>
-        </View>
-        <View style={{ flexDirection: 'row',  width: 320, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, justifyContent: 'space-between', }}>
-            <Image source={ require('../assets/images/image_4.png') } style={styles.cardMenorImage}></Image>
-            <View style={{ flexDirection: 'column', marginLeft: 16 }}>
-                <View style={{ flexDirection: 'row' }}>
-                    <Text style={styles.bunkerDown}>Cover Version</Text>
-                    <FavoriteButton/>
-                </View>
-                <View style={{ flexDirection: 'column', marginBottom: 8 }}>
-                    <Text style={styles.videoInfo}>Alien Workshop * 2019 * 37 min</Text>
-                    <View style={{ flexDirection:'row', marginTop: 10 }}>
-                        <Text style={styles.videoTags}>Trilha sonora</Text>
-                        <Text style={styles.videoTags}>Defon</Text>
-                    </View>
-                </View>
-            </View>
-        </View>
-        <View style={{ flexDirection: 'row',  width: 320, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, justifyContent: 'space-between', }}>
-            <Image source={ require('../assets/images/image_4.png') } style={styles.cardMenorImage}></Image>
-            <View style={{ flexDirection: 'column', marginLeft: 16 }}>
-                <View style={{ flexDirection: 'row' }}>
-                    <Text style={styles.bunkerDown}>Cover Version</Text>
-                    <FavoriteButton/>
-                </View>
-                <View style={{ flexDirection: 'column', marginBottom: 8 }}>
-                    <Text style={styles.videoInfo}>Alien Workshop * 2019 * 37 min</Text>
-                    <View style={{ flexDirection:'row', marginTop: 10 }}>
-                        <Text style={styles.videoTags}>Trilha sonora</Text>
-                        <Text style={styles.videoTags}>Defon</Text>
-                    </View>
-                </View>
-            </View>
-        </View>
-        <View style={{ flexDirection: 'row',  width: 320, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, justifyContent: 'space-between', }}>
-            <Image source={ require('../assets/images/image_4.png') } style={styles.cardMenorImage}></Image>
-            <View style={{ flexDirection: 'column', marginLeft: 16 }}>
-                <View style={{ flexDirection: 'row' }}>
-                    <Text style={styles.bunkerDown}>Cover Version</Text>
-                    <FavoriteButton/>
-                </View>
-                <View style={{ flexDirection: 'column', marginBottom: 8 }}>
-                    <Text style={styles.videoInfo}>Alien Workshop * 2019 * 37 min</Text>
-                    <View style={{ flexDirection:'row', marginTop: 10 }}>
-                        <Text style={styles.videoTags}>Trilha sonora</Text>
-                        <Text style={styles.videoTags}>Defon</Text>
-                    </View>
-                </View>
-            </View>
-        </View>
+        <CardShadow></CardShadow>
+        <CardShadow></CardShadow>
+        <CardShadow></CardShadow>
+        <CardShadow></CardShadow>
 
       </ScrollView>
 
@@ -130,14 +70,14 @@ const styles = StyleSheet.create({
   tabSelected: {
     fontFamily: 'quicksand-bold',
     fontSize: 16,
-    color: '#313131',
+    // color: '#313131',
     marginRight: 22,
     marginBottom: 0,
   },
   tabNotSelected: {
     fontFamily: 'quicksand-bold',
     fontSize: 16,
-    color: '#313131',
+    // color: '#313131',
     marginRight: 22,
     marginBottom: 0,
     opacity: 0.4,
