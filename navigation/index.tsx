@@ -98,6 +98,7 @@ function BottomTabNavigator() {
         component={TabThreeScreen}
         options={{
           title: 'Perfil',
+          tabBarHideOnKeyboard: true,
           tabBarIcon: ({ color }) => <TabBarIcon name='person-outline' color={color} />
         }}
       />
