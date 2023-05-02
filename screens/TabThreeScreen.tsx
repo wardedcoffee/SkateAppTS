@@ -4,26 +4,81 @@ import { Text, View } from "../components/Themed";
 import EmailForm from "../components/EmailForm";
 
 import { ScrollView } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
 
 
 export default function TabThreeScreen() {
     return (
       <View style={styles.container}>
           <ScrollView>
-             <Image style={styles.perfil} source={ require('../assets/images/Ellipse.png') }></Image>
-            <Text style={styles.title}>Mariana Q.</Text>
-            <Text style={styles.videoInfo}>33 videos assistidos</Text>
-            {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1" /> */}
-            <Text>Informacoes pessoais</Text>
-            <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1" />
-            <Text>Nome</Text>
-            <Text>Mariana Quaresma</Text>
+            <View style={{ flexDirection: 'row',  width: 220, marginLeft: 4, marginTop: 16, marginBottom: 32, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, justifyContent: 'space-around', }}>
+              <Image style={styles.perfil} source={ require('../assets/images/mari.jpg') }></Image>
+              <View style={{ flexDirection: 'column', marginLeft: 16 }}>
+                <Text style={styles.title}>Mariana Q.</Text>
+                <Text style={styles.videoInfo}>33 videos assistidos</Text>
+              </View>
+            </View>
+            <Text style={styles.tabSelected} >Informações pessoais</Text>
+
+             <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1" />
+
+            <View style={{ flexDirection: 'row', width: 330,  justifyContent: 'space-between', }}>
+              <View style={{ flexDirection: 'column' }}>
+                  <Text style={styles.labelPerfil}>Nome</Text>
+                  <Text style={styles.infoPerfil}>Mariana Quaresma</Text>
+              </View>
+              <View style={{ flexDirection: "row" }}>
+                  <MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
+              </View>
+            </View>
+
             <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1" />
 
-            <EmailForm />
-            {/* <EmailForm777></EmailForm777> */}
-            {/* <KeyboardAvoidingComponent></KeyboardAvoidingComponent> */}
-            {/* <EditScreenInfo path="/screens/TabThreeScreen.tsx" /> */}
+            <View style={{ flexDirection: 'row', width: 330,  justifyContent: 'space-between', }}>
+              <View style={{ flexDirection: 'column' }}>
+                <Text style={styles.labelPerfil}>E-mail</Text>
+                <Text style={styles.infoPerfil}>mariana@alura.com.br</Text>
+                {/* <EmailForm /> */}
+              </View>
+              <View style={{ flexDirection: "row" }}>
+                  <MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
+              </View>
+            </View>
+
+            <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1" />
+
+            <View style={{ flexDirection: 'row', width: 330,  justifyContent: 'space-between', }}>
+              <View style={{ flexDirection: 'column' }}>
+                <Text style={styles.labelPerfil}>Telefone</Text>
+                <Text style={styles.infoPerfil}>(21) 23782-9988</Text>
+              </View>
+              <View style={{ flexDirection: "row" }}>
+                  <MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
+              </View>
+            </View>
+
+            <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1" />
+
+            <View style={{ flexDirection: 'row', width: 330,  justifyContent: 'space-between', }}>
+              <View style={{ flexDirection: 'column' }}>
+                <Text style={styles.labelPerfil}>Senha</Text>
+                <Text style={styles.infoPerfil}>***********</Text>
+              </View>
+              <View style={{ flexDirection: "row" }}>
+                  <MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
+              </View>
+            </View>
+
+            <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1" />
+
+            <View style={{ flexDirection: 'row', width: 330,  justifyContent: 'space-between', }}>
+              <View style={{ flexDirection: 'column' }}>
+                <Text style={styles.infoPerfil}>Sair da minha conta</Text>
+              </View>
+              <View style={{ flexDirection: "row" }}>
+                  <MaterialIcons name={'exit-to-app'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
+              </View>
+            </View>
         </ScrollView>
       </View>
     );
@@ -37,6 +92,15 @@ const styles = StyleSheet.create({
         // alignItems: 'center',
         // justifyContent: 'center',
     },
+    card:{
+      marginBottom: 48,
+      marginLeft: 16,
+      maxWidth: 350, 
+    },
+    flexDirection:{
+      flexDirection: 'row',
+      justifyContent: 'space-between'
+    },
     inner: {
         padding: 24,
         flex: 1,
@@ -45,6 +109,13 @@ const styles = StyleSheet.create({
       header: {
         fontSize: 36,
         marginBottom: 48,
+      },
+      tabSelected: {
+        fontFamily: 'quicksand-bold',
+        fontSize: 16,
+        // color: '#313131',
+        marginRight: 22,
+        marginBottom: 0,
       },
       textInput: {
         height: 40,
@@ -57,23 +128,48 @@ const styles = StyleSheet.create({
         marginTop: 12,
       },
     title: {
-        fontSize: 20,
-        fontWeight: 'bold',
+      fontFamily: 'quicksand-bold',
+        fontSize: 22,
+        lineHeight: 28,
+        marginTop: 10,
+        marginBottom: 8,
+        // fontWeight: 'bold',
         // color: 'black'
     },
     videoInfo:{
       fontFamily: 'quicksand-regular',
       fontSize: 14,
-      margin: 0,
+      lineHeight: 18,
+      // margin: 0,
       // color: 'black'
     },
+    labelPerfil:{
+      fontFamily: 'quicksand-light',
+      fontSize: 12,
+      lineHeight: 15,
+      marginBottom: 4,
+      // opacity: 70,
+    },
+    infoPerfil:{
+      fontFamily: 'quicksand-regular',
+      fontSize: 16,
+      lineHeight: 20,
+      margin: 0,
+      // opacity: 50,
+    },
     separator: {
-        marginVertical:30,
+        marginVertical: 16,
         height: 1,
-        width: '80%',
+        width: '95%',
     },
     perfil: {
         position: "relative",
-        // width:'50px',
+        height: 90,
+        width: 90,
+        borderBottomLeftRadius: 50,
+        borderBottomRightRadius: 50,
+        borderTopLeftRadius: 50,
+        borderTopRightRadius: 50
+
     },
 });

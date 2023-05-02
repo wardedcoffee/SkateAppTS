@@ -7,6 +7,7 @@ const FavoriteButton = () => {
 
   const handlePress = () => {
     setIsFavorite(!isFavorite);
+    console.log('fui clicado');
   };
 
   return (
