@@ -8,7 +8,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { ColorSchemeName, Pressable } from 'react-native';
+import { ColorSchemeName } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -19,6 +19,7 @@ import TabTwoScreen from '../screens/TabTwoScreen';
 import TabThreeScreen from '../screens/TabThreeScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import Login from '../screens/Login';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -43,7 +44,12 @@ function RootNavigator() {
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
+        <Stack.Screen name="Login" component={Login} />
       </Stack.Group>
+      {/* <Stack.Group screenOptions={{ presentation: 'modal' }}>
+        <Stack.Screen name="LoginPage" component={LoginPage} />
+      </Stack.Group> */}
+        {/* <Stack.Screen name="LoginPage" component={LoginPage} /> */}
     </Stack.Navigator>
   );
 }
@@ -57,6 +63,13 @@ const BottomTab = createBottomTabNavigator<RootTabParamList>();
 function BottomTabNavigator() {
   const colorScheme = useColorScheme();
 
+  // function handleExitApp(arg0: { navigation: import("@react-navigation/native").CompositeNavigationProp<import("@react-navigation/bottom-tabs").BottomTabNavigationProp<RootTabParamList, "TabThree", undefined>, import("@react-navigation/native-stack").NativeStackNavigationProp<RootStackParamList, string, undefined>>; }): void {
+  //   throw new Error('Function not implemented.');
+  // }
+  // const handleExitApp = ({ navigation }) => {
+  //   navigation.navigate('Login');
+  // };
+
   return (
     <BottomTab.Navigator
       initialRouteName="TabOne"
@@ -69,20 +82,20 @@ function BottomTabNavigator() {
         options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
           title: 'Destaques',
           tabBarIcon: ({ color }) => <TabBarIcon name="whatshot" color={color} />,
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate('Modal')}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}>
-              <MaterialIcons
-                name="info-outline"
-                size={20}
-                color={Colors[colorScheme].text}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
+          // headerRight: () => (
+          //   <Pressable
+          //     onPress={() => navigation.navigate('Modal')}
+          //     style={({ pressed }) => ({
+          //       opacity: pressed ? 0.5 : 1,
+          //     })}>
+          //     <MaterialIcons
+          //       name="info-outline"
+          //       size={20}
+          //       color={Colors[colorScheme].text}
+          //       style={{ marginRight: 15 }}
+          //     />
+          //   </Pressable>
+          // ),
         })}
       />
       <BottomTab.Screen
@@ -96,11 +109,25 @@ function BottomTabNavigator() {
       <BottomTab.Screen
         name="TabThree"
         component={TabThreeScreen}
-        options={{
+        // options={{
+          options={({ navigation }: RootTabScreenProps<'TabThree'>) => ({
           title: 'Perfil',
           tabBarHideOnKeyboard: true,
-          tabBarIcon: ({ color }) => <TabBarIcon name='person-outline' color={color} />
-        }}
+          tabBarIcon: ({ color }) => <TabBarIcon name='person-outline' color={color} />,
+          // headerRight: () => (
+          //   <><Pressable
+          //     onPress={() => navigation.navigate('Modal2')}
+          //     style={({ pressed }) => ({
+          //       opacity: pressed ? 0.5 : 1,
+          //     })}>
+          //     <MaterialIcons
+          //       name="info-outline"
+          //       size={20}
+          //       color={Colors[colorScheme].text}
+          //       style={{ marginRight: 15 }} />
+          //   </Pressable><Button title="Exit App2" style={{ marginLeft: 10, marginBottom: 20 }} onPress={() => handleExitApp({ navigation })} /></>
+          // ),
+        })}
       />
     </BottomTab.Navigator>
   );
