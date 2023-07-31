@@ -1,35 +1,28 @@
+import React, { useState } from 'react';
 import { StyleSheet, Image, ScrollView } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+// import { MaterialIcons } from '@expo/vector-icons';
 
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
+import FavoriteButton from '../components/FavoriteButton';
 
 import CardShadow  from '../components/CardShadow';
+import SwiperComponent from '../components/SwiperComponent';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
     <View style={styles.container}>
 
-      <View style={{ marginLeft: 16 }}>
+      <View style={{ marginLeft: 16}}>
         <Text style={styles.title}>Ola Mariana Q.</Text>
         <Text style={styles.usernameTopQuestion}>O que voce procura hoje?</Text>
       </View>
       <ScrollView>
-        <View style={styles.card}>
-          <Image source={ require('../assets/images/image_1.png') } style={styles.carrouselFirstImage}></Image>
-          <View style={styles.flexDirection}>
-            <Text style={styles.bunkerDown}>Bunker Down</Text>
-            <MaterialIcons
-                  name="favorite-border"
-                  size={24}
-                  // color={Colors[colorScheme].text}
-                  style={{ marginRight: 60, marginTop: 10 }}
-                />
-            {/* <Image style={styles.favoriteBorder} source={ require('../assets/icons/favorite_border.png')}></Image> */}
-          </View>
-          <Text style={styles.videoInfo}>Alien Workshop * 2019 * 37 min</Text>
-        </View>
-
+        <SwiperComponent/>
+        {/* <View style={styles.card}>
+           
+         
+        </View> */}
 
         <View style={styles.containerTabsText}>
           <Text style={styles.tabSelected}>Lancamentos</Text>
@@ -37,9 +30,6 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
           <Text style={styles.tabNotSelected}>Destaque</Text>
         </View>
 
-        <CardShadow></CardShadow>
-        <CardShadow></CardShadow>
-        <CardShadow></CardShadow>
         <CardShadow></CardShadow>
         <CardShadow></CardShadow>
         <CardShadow></CardShadow>
@@ -78,14 +68,14 @@ const styles = StyleSheet.create({
   tabSelected: {
     fontFamily: 'quicksand-bold',
     fontSize: 16,
-    color: '#313131',
+    // color: '#313131',
     marginRight: 22,
     marginBottom: 0,
   },
   tabNotSelected: {
     fontFamily: 'quicksand-bold',
     fontSize: 16,
-    color: '#313131',
+    // color: '#313131',
     marginRight: 22,
     marginBottom: 0,
     opacity: 0.4,
@@ -129,18 +119,36 @@ const styles = StyleSheet.create({
     fontSize: 14,
     margin: 0,
   },
+  videoTags:{
+    fontFamily: 'quicksand-regular',
+    textAlign: 'center',
+    fontSize: 12,
+    margin: 0,
+    backgroundColor: '#E5E5E5',
+    width: 'auto',
+    // padding: 6,
+    paddingTop: 4,
+    paddingRight: 8,
+    paddingLeft: 8,
+    paddingBottom: 6,
+    marginRight: 13,
+    borderRadius: 20,
+  },
+   decIncButton: {
+    backgroundColor: '#fff',
+    padding: 5,
+    paddingHorizontal: 12,
+    borderRadius: 4,
+  },  
   separator: {
     marginVertical: 30,
     height: 1,
     width: '80%',
   },
-  carrouselFirstImage: {
-    // position: "relative",
-    borderRadius: 15,
-    // width: '80%',
-  },
+
   cardMenorImage: {
     borderTopLeftRadius: 8,
     borderBottomLeftRadius: 8, 
+    marginLeft: 16
   },
 });
