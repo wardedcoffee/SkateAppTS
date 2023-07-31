@@ -7,24 +7,22 @@ import { RootTabScreenProps } from '../types';
 import FavoriteButton from '../components/FavoriteButton';
 
 import CardShadow  from '../components/CardShadow';
+import SwiperComponent from '../components/SwiperComponent';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
     <View style={styles.container}>
 
-      <View style={{ marginLeft: 16 }}>
+      <View style={{ marginLeft: 16}}>
         <Text style={styles.title}>Ola Mariana Q.</Text>
         <Text style={styles.usernameTopQuestion}>O que voce procura hoje?</Text>
       </View>
       <ScrollView>
-        <View style={styles.card}>
-          <Image source={ require('../assets/images/image_1.png') } style={styles.carrouselFirstImage}></Image>
-          <View style={styles.flexDirection}>
-            <Text style={styles.bunkerDown}>Bunker Down</Text>
-            <FavoriteButton/>
-          </View>
-          <Text style={styles.videoInfo}>Alien Workshop * 2019 * 37 min</Text>
-        </View>
+        <SwiperComponent/>
+        {/* <View style={styles.card}>
+           
+         
+        </View> */}
 
         <View style={styles.containerTabsText}>
           <Text style={styles.tabSelected}>Lancamentos</Text>
@@ -147,11 +145,7 @@ const styles = StyleSheet.create({
     height: 1,
     width: '80%',
   },
-  carrouselFirstImage: {
-    // position: "relative",
-    borderRadius: 15,
-    // width: '80%',
-  },
+
   cardMenorImage: {
     borderTopLeftRadius: 8,
     borderBottomLeftRadius: 8, 
