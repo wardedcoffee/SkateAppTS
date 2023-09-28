@@ -1,38 +1,12 @@
+# SkateAppTS
 
-# Skate App
+Esse repositorio tem a finalidade de registrar meus estudos de React Native e TypeScript.
+O visual foi baseado em um curso de UX/UI da Alura Online com a ferramenta Figma.
 
-A brief description of what this project does and who it's for
+## Dependencias
 
-This project is for me(to learn a new tecnology), i had this UX/UI project done in a course by Alura and i think: "why not make this real in react native?"; Here we are, hope you enjoy.
+Pra rodar esse projeto localmente voce precisa de uma versao atual do nodejs >= v16.15.1.
+NPM ou Yarn, Expo.
 
-Esse projeto foi feito pra mim(para aprender uma nova tecnologia), eu tinha esse projeto de UX/UI feito durante um curso da Alura e eu pensei: "Porque não fazer ele de verdade em react native?"; E aqui estamos, espero que goste.
-
-
-
-
-
-
-
-
-
-## Authors
-
-- [@wardedcoffee](https://www.github.com/wardedcoffee)
-
-
-## Installation
-
-Install my-project with yarn
-
-```bash
-  yarn install my-project
-  cd my-project
-```
-    
-   
-## Tech Stack
-
-**Client:** React Native, 
-
-**Server:** Node,
-
+Rodando NPM install ou Yarn install e instalando o Expo na sua maquina e o app do Expo no seu smartphone, acredito que estara pronto pra comecar.
+Se voce subiu um projeto React Native com Expo, sugiro conferir a documentacao oficial tanto do [React Native](https://reactnative.dev/) quanto do [Expo](https://expo.dev/).
