@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     margin: 10,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: '#f0f0f0',
-    backgroundColor: '#33EEDD',
+    backgroundColor: 'tintColorLight',
     borderRadius: 8
   },
   separator: {

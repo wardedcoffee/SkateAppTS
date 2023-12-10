@@ -29,7 +29,7 @@ export default function TabThreeScreen() {
 									<Text style={styles.infoPerfil}>Mariana Quaresma</Text>
 							</View>
 							<View style={{ flexDirection: "row" }}>
-									<MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
+									<MaterialIcons name={'chevron-right'} size={24} color={'tintColorLight'} style={{ marginLeft: 10, marginBottom: 20 }} />
 							</View>
 						</View>
 
@@ -42,7 +42,7 @@ export default function TabThreeScreen() {
 								{/* <EmailForm /> */}
 							</View>
 							<View style={{ flexDirection: "row" }}>
-									<MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
+									<MaterialIcons name={'chevron-right'} size={24} color={'tintColorLight'} style={{ marginLeft: 10, marginBottom: 20 }} />
 							</View>
 						</View>
 
@@ -54,7 +54,7 @@ export default function TabThreeScreen() {
 								<Text style={styles.infoPerfil}>(21) 23782-9988</Text>
 							</View>
 							<View style={{ flexDirection: "row" }}>
-									<MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
+									<MaterialIcons name={'chevron-right'} size={24} color={'tintColorLight'} style={{ marginLeft: 10, marginBottom: 20 }} />
 							</View>
 						</View>
 
@@ -66,7 +66,7 @@ export default function TabThreeScreen() {
 								<Text style={styles.infoPerfil}>***********</Text>
 							</View>
 							<View style={{ flexDirection: "row" }}>
-									<MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
+									<MaterialIcons name={'chevron-right'} size={24} color={'tintColorLight'} style={{ marginLeft: 10, marginBottom: 20 }} />
 							</View>
 						</View>
 
@@ -89,7 +89,7 @@ export default function TabThreeScreen() {
 											// color={Colors[colorScheme].text}
 											style={{ marginRight: 15 }} />
 										</Pressable><Button title="Exit App" onPress={() => handleExitApp({ navigation })} /> */}
-									{/* <MaterialIcons name={'exit-to-app'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} /> */}
+									{/* <MaterialIcons name={'exit-to-app'} size={24} color={'tintColorLight'} style={{ marginLeft: 10, marginBottom: 20 }} /> */}
 							</View>
 						</View>
 				</ScrollView>
