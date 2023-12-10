@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { View, TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const ExitApp = () => {
     const [isExit, setIsExit] = useState(false);
-
+    const navigation = useNavigation();
     const handlePress = () => {
         setIsExit(!isExit);
         console.log('vou sairrrrrr!');
-    //     () => navigation.navigate('Modal')
-    
-    
-};
+         navigation.navigate('Login')    
+    };
 
     return (
         <TouchableOpacity onPress={(handlePress)}>
