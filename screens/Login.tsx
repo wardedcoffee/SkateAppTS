@@ -1,31 +1,73 @@
 import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet } from 'react-native';
+import { Platform, StyleSheet, Image, Pressable, GestureResponderEvent } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
 export default function Login() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>LoginPage</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/Login.tsx" />
+  function onPressFunctionGoogle(event: GestureResponderEvent): void {
+    console.log("clique no botao Google")
+    throw new Error('Function not implemented.');
+  }
+  function onPressFunctionEmail(event: GestureResponderEvent): void {
+    console.log("clique no botao email")
+    throw new Error('Function not implemented.');
+  }
 
-      {/* Use a light status bar on iOS to account for the black space above the modal */}
+  return (
+    <View>
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
+      <Image  style={{ resizeMode: 'cover', }}  source={require('../assets/images/image_7.png')}></Image>
+      <View style={styles.container}>
+        <Image source={require('../assets/images/SkateAppLogo.png')}></Image>
+        <Pressable style={styles.buttonGoogle} onPress={onPressFunctionGoogle}>
+          <Text style={styles.textButtons}>Entrar com Google</Text>
+        </Pressable>
+        <Pressable style={styles.buttonDefault} onPress={onPressFunctionEmail}>
+          <Text style={styles.textButtons}>Entrar com e-mail</Text>
+        </Pressable>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'column',
+    marginTop: 12,
+    marginBottom: 32
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
+  },
+  textButtons:{
+    textAlign: 'center',
+    fontFamily: 'quicksand-bold',
+    // fontWeight: '700',
+    fontSize: 16,
+    color: '#fff',
+    margin: 0,
+  },
+  buttonGoogle:{
+    width: 300,
+    padding: 20,
+    margin: 10,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: '#f0f0f0',
+    backgroundColor: '#DD4B39',
+    borderRadius: 8
+  },
+  buttonDefault: {
+    width: 300,
+    padding: 20,
+    margin: 10,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: '#f0f0f0',
+    backgroundColor: 'tintColorLight',
+    borderRadius: 8
   },
   separator: {
     marginVertical: 30,

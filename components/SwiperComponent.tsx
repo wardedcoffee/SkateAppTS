@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     width: 340
   },
   dotStyle: {
-    color: '#33EEDD'
+    color: 'tintColorLight'
   },
   text: {
     color: '#fff',
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
 export default class SwiperComponent extends Component {
   render() {
     return (
-      <Swiper style={styles.wrapper} showsButtons={false} autoplay={false} activeDotColor='#33EEDD'  dotColor='#176E66'>
+      <Swiper style={styles.wrapper} showsButtons={false} autoplay={false} activeDotColor='tintColorLight'  dotColor='#176E66'>
         <View style={styles.slide}>
             <Image source={ require('../assets/images/image_1.png') } style={styles.carrouselFirstImage}></Image>
             <View style={styles.flexDirection}>

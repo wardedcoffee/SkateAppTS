@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { View, TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const ExitApp = () => {
     const [isExit, setIsExit] = useState(false);
-
+    const navigation = useNavigation();
     const handlePress = () => {
         setIsExit(!isExit);
         console.log('vou sairrrrrr!');
-    //     () => navigation.navigate('Modal')
-    
-    
-};
+         navigation.navigate('Login')    
+    };
 
     return (
         <TouchableOpacity onPress={(handlePress)}>
@@ -19,7 +18,7 @@ const ExitApp = () => {
                 <MaterialIcons 
                     name={'exit-to-app'}
                     size={24}
-                    color={isExit ? '#33EEDD' : '#176E66'   }
+                    color={isExit ? 'tintColorLight' : '#176E66'   }
                     style={{ marginLeft: 10, marginBottom: 20 }}
                     />
             </View>
