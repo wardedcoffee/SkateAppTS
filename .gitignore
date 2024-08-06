@@ -1,6 +1,9 @@
+# React Native/Expo
 node_modules/
 .expo/
 dist/
+web-build/
+*.log
 npm-debug.*
 *.jks
 *.p8
@@ -8,7 +11,28 @@ npm-debug.*
 *.key
 *.mobileprovision
 *.orig.*
-web-build/
 
 # macOS
 .DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.cache/
+.config/
+.local/
+.Trash-*/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
