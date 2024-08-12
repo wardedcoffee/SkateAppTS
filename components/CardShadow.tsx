@@ -8,24 +8,25 @@ import FavoriteButtonCard from "./FavoriteButtonCard";
 export default function CardShadow () {
     return (
         <View style={{ marginLeft: 16, marginBottom: 16 }}>
-            <Shadow distance={ 12 } >
-                <View style={{ flexDirection: 'row',  width: 320, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, justifyContent: 'space-between', }}>
+            {/* <Shadow distance={ 12 } > */}
+                <View style={{ flexDirection: 'row', borderRadius: 8, marginRight: 16, backgroundColor: '#FFF' }}>
                     <Image source={ require('../assets/images/image_4.png') } style={styles.cardMenorImage}></Image>
-                    <View style={{ flexDirection: 'column', marginLeft: 16 }}>
-                        <View style={{ flexDirection: 'row' }}>
+                    <View style={{ flexDirection: 'column', marginLeft: 16, backgroundColor: '#FFF' }}>
+                        <View style={{ flexDirection: 'row', backgroundColor: '#FFF' }}>
                             <Text style={styles.bunkerDown}>Cover Version</Text>
-                                <FavoriteButtonCard />
                         </View>
-                        <View style={{ flexDirection: 'column', marginBottom: 8 }}>
+                        <View style={{ flexDirection: 'column', marginBottom: 8, backgroundColor: '#FFF' }}>
                             <Text style={styles.videoInfo}>Alien Workshop * 2019 * 37 min</Text>
-                            <View style={{ flexDirection:'row', marginTop: 10 }}>
+                            <View style={{ flexDirection:'row', marginTop: 10, backgroundColor: '#FFF' }}>
                                 <Text style={styles.videoTags}>Trilha sonora</Text>
                                 <Text style={styles.videoTags}>Defon</Text>
                             </View>
                         </View>
                     </View>
+                    <FavoriteButtonCard />
+
                 </View>
-            </Shadow>
+            {/* </Shadow> */}
         </View>
     );
 }

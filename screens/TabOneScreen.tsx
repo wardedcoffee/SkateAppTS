@@ -8,13 +8,17 @@ import FavoriteButton from '../components/FavoriteButton';
 
 import CardShadow  from '../components/CardShadow';
 import SwiperComponent from '../components/SwiperComponent';
+import { MaterialIcons } from '@expo/vector-icons';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
     <View style={styles.container}>
 
       <View style={{ marginLeft: 16}}>
+        <View style={{ flexDirection: "row", justifyContent: 'space-between'}}>
         <Text style={styles.title}>Ola Mariana Q.</Text>
+            <MaterialIcons name={'search'} size={24} color={'#313131'} style={{ marginRight: 16, marginTop: 8 }} />
+        </View>
         <Text style={styles.usernameTopQuestion}>O que voce procura hoje?</Text>
       </View>
       <ScrollView>

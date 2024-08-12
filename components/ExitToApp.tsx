@@ -18,7 +18,7 @@ const ExitApp = () => {
                 <MaterialIcons 
                     name={'exit-to-app'}
                     size={24}
-                    color={isExit ? 'tintColorLight' : '#176E66'   }
+                    color={isExit ? '#33EEDD' : '#176E66'   } 
                     style={{ marginLeft: 10, marginBottom: 20 }}
                     />
             </View>

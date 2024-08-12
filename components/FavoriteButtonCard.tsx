@@ -16,7 +16,7 @@ const FavoriteButtonCard = () => {
           name={isFavorite ? 'favorite' : 'favorite-border'}
           size={24}
           color={isFavorite ? 'red' : '#828A9B'}
-          style={{ marginLeft: 70, marginRight: 10, marginTop: 8 }}
+          style={{ marginTop: 8 }}
         //   style={{ marginRight: 60, marginTop: 10 }}
         />
       </View>

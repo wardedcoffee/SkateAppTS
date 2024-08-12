@@ -12,67 +12,67 @@ export default function TabThreeScreen() {
 		return (
 			<View style={styles.container}>
 					<ScrollView>
-						<View style={{ flexDirection: 'row',  width: 220, marginLeft: 4, marginTop: 16, marginBottom: 32, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, justifyContent: 'space-around', }}>
+						<View style={{ flexDirection: 'row',  width: 220, marginLeft: 16, marginTop: 16, marginBottom: 32, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, justifyContent: 'space-around', }}>
 							<Image style={styles.perfil} source={ require('../assets/images/mari.jpg') }></Image>
-							<View style={{ flexDirection: 'column', marginLeft: 16 }}>
+							<View style={{ flexDirection: 'column', marginLeft: 36 }}>
 								<Text style={styles.title}>Mariana Q.</Text>
 								<Text style={styles.videoInfo}>33 videos assistidos</Text>
 							</View>
 						</View>
 						<Text style={styles.tabSelected} >Informações pessoais</Text>
 
-						 <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1" />
+						 <View style={styles.separator} lightColor="#313131" darkColor="rgba(255,255,255,0.1" />
 
-						<View style={{ flexDirection: 'row', width: 330,  justifyContent: 'space-between', }}>
+						<View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
 							<View style={{ flexDirection: 'column' }}>
 									<Text style={styles.labelPerfil}>Nome</Text>
 									<Text style={styles.infoPerfil}>Mariana Quaresma</Text>
 							</View>
 							<View style={{ flexDirection: "row" }}>
-									<MaterialIcons name={'chevron-right'} size={24} color={'tintColorLight'} style={{ marginLeft: 10, marginBottom: 20 }} />
+									<MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
 							</View>
 						</View>
 
-						<View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1" />
+						<View style={styles.separator}  lightColor="#313131" darkColor="rgba(255,255,255,0.1" />
 
-						<View style={{ flexDirection: 'row', width: 330,  justifyContent: 'space-between', }}>
+						<View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
 							<View style={{ flexDirection: 'column' }}>
 								<Text style={styles.labelPerfil}>E-mail</Text>
 								<Text style={styles.infoPerfil}>mariana@alura.com.br</Text>
 								{/* <EmailForm /> */}
 							</View>
 							<View style={{ flexDirection: "row" }}>
-									<MaterialIcons name={'chevron-right'} size={24} color={'tintColorLight'} style={{ marginLeft: 10, marginBottom: 20 }} />
+									<MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
 							</View>
 						</View>
 
-						<View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1" />
+						<View style={styles.separator} lightColor="#313131" darkColor="rgba(255,255,255,0.1" />
 
-						<View style={{ flexDirection: 'row', width: 330,  justifyContent: 'space-between', }}>
+						<View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
 							<View style={{ flexDirection: 'column' }}>
 								<Text style={styles.labelPerfil}>Telefone</Text>
 								<Text style={styles.infoPerfil}>(21) 23782-9988</Text>
 							</View>
 							<View style={{ flexDirection: "row" }}>
-									<MaterialIcons name={'chevron-right'} size={24} color={'tintColorLight'} style={{ marginLeft: 10, marginBottom: 20 }} />
+									<MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
 							</View>
 						</View>
 
-						<View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1" />
+						<View style={styles.separator} lightColor="#313131" darkColor="rgba(255,255,255,0.1" />
 
-						<View style={{ flexDirection: 'row', width: 330,  justifyContent: 'space-between', }}>
+						<View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
 							<View style={{ flexDirection: 'column' }}>
 								<Text style={styles.labelPerfil}>Senha</Text>
 								<Text style={styles.infoPerfil}>***********</Text>
 							</View>
 							<View style={{ flexDirection: "row" }}>
-									<MaterialIcons name={'chevron-right'} size={24} color={'tintColorLight'} style={{ marginLeft: 10, marginBottom: 20 }} />
+									<MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
 							</View>
 						</View>
 
-						<View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1" />
+						<View style={styles.separator} lightColor="#313131" darkColor="rgba(255,255,255,0.1" />
 
-						<View style={{ flexDirection: 'row', width: 330,  justifyContent: 'space-between', }}>
+						<View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
 							<View style={{ flexDirection: 'column' }}>
 								<Text style={styles.infoPerfil}>Sair da minha conta</Text>
 							</View>
@@ -100,7 +100,8 @@ export default function TabThreeScreen() {
 const styles = StyleSheet.create({
 		container: {
 				flex: 1,
-				paddingLeft: 14,
+				paddingLeft: 16,
+				paddingRight: 16,
 				// backgroundColor: '#FAFAFA',
 				// alignItems: 'center',
 				// justifyContent: 'center',
@@ -173,7 +174,7 @@ const styles = StyleSheet.create({
 		separator: {
 				marginVertical: 16,
 				height: 1,
-				width: '95%',
+				opacity: 0.1,
 		},
 		perfil: {
 				position: "relative",
