@@ -6,92 +6,95 @@ import EmailForm from "../components/EmailForm";
 import { MaterialIcons } from "@expo/vector-icons";
 import ExitApp from "../components/ExitToApp";
 import { Colors } from "react-native/Libraries/NewAppScreen";
-
+import UserThumbnail from "../components/UserThumbnail";
+import ImagePicker from "../components/ImagePicker";
 
 export default function TabThreeScreen() {
 		return (
 			<View style={styles.container}>
-					<ScrollView>
-						<View style={{ flexDirection: 'row',  width: 220, marginLeft: 16, marginTop: 16, marginBottom: 32, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, justifyContent: 'space-around', }}>
-							<Image style={styles.perfil} source={ require('../assets/images/mari.jpg') }></Image>
-							<View style={{ flexDirection: 'column', marginLeft: 36 }}>
-								<Text style={styles.title}>Mariana Q.</Text>
-								<Text style={styles.videoInfo}>33 videos assistidos</Text>
-							</View>
+				<ScrollView>
+					<View style={{ flexDirection: 'row',  width: 220, marginLeft: 16, marginTop: 16, marginBottom: 32, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, justifyContent: 'space-around', }}>
+						{/* <Image style={styles.perfil} source={ require('../assets/images/mari.jpg') }></Image> */}
+						{/* <UserThumbnail img={ 'https://images.unsplash.com/photo-1495914510314-ba3164b1321f?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmFjZXN8ZW58MHx8MHx8fDA%3D' } alt="Mariana Q." url="https://example.com" /> */}
+						<ImagePicker />
+						<View style={{ flexDirection: 'column', marginLeft: 36 }}>
+							<Text style={styles.title}>Mariana Q.</Text>
+							<Text style={styles.videoInfo}>33 videos assistidos</Text>
 						</View>
-						<Text style={styles.tabSelected} >Informações pessoais</Text>
-
-						 <View style={styles.separator} lightColor="#313131" darkColor="rgba(255,255,255,0.1" />
-
-						<View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
-							<View style={{ flexDirection: 'column' }}>
-									<Text style={styles.labelPerfil}>Nome</Text>
-									<Text style={styles.infoPerfil}>Mariana Quaresma</Text>
-							</View>
-							<View style={{ flexDirection: "row" }}>
-									<MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
-							</View>
-						</View>
-
-						<View style={styles.separator}  lightColor="#313131" darkColor="rgba(255,255,255,0.1" />
-
-						<View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
-							<View style={{ flexDirection: 'column' }}>
-								<Text style={styles.labelPerfil}>E-mail</Text>
-								<Text style={styles.infoPerfil}>mariana@alura.com.br</Text>
-								{/* <EmailForm /> */}
-							</View>
-							<View style={{ flexDirection: "row" }}>
-									<MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
-							</View>
-						</View>
+					</View>
+					<Text style={styles.tabSelected} >Informações pessoais</Text>
 
 						<View style={styles.separator} lightColor="#313131" darkColor="rgba(255,255,255,0.1" />
 
-						<View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
-							<View style={{ flexDirection: 'column' }}>
-								<Text style={styles.labelPerfil}>Telefone</Text>
-								<Text style={styles.infoPerfil}>(21) 23782-9988</Text>
-							</View>
-							<View style={{ flexDirection: "row" }}>
-									<MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
-							</View>
+					<View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
+						<View style={{ flexDirection: 'column' }}>
+								<Text style={styles.labelPerfil}>Nome</Text>
+								<Text style={styles.infoPerfil}>Mariana Quaresma</Text>
 						</View>
-
-						<View style={styles.separator} lightColor="#313131" darkColor="rgba(255,255,255,0.1" />
-
-						<View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
-							<View style={{ flexDirection: 'column' }}>
-								<Text style={styles.labelPerfil}>Senha</Text>
-								<Text style={styles.infoPerfil}>***********</Text>
-							</View>
-							<View style={{ flexDirection: "row" }}>
-									<MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
-							</View>
+						<View style={{ flexDirection: "row" }}>
+								<MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
 						</View>
+					</View>
 
-						<View style={styles.separator} lightColor="#313131" darkColor="rgba(255,255,255,0.1" />
+					<View style={styles.separator}  lightColor="#313131" darkColor="rgba(255,255,255,0.1" />
 
-						<View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
-							<View style={{ flexDirection: 'column' }}>
-								<Text style={styles.infoPerfil}>Sair da minha conta</Text>
-							</View>
-							<View style={{ flexDirection: "row" }}>
-									<ExitApp />
-									{/* <Pressable
-										onPress={() => navigation.navigate('Modal2')}
-										style={({ pressed }) => ({
-											opacity: pressed ? 0.5 : 1,
-										})}>
-										<MaterialIcons
-											name="info-outline"
-											size={20}
-											// color={Colors[colorScheme].text}
-											style={{ marginRight: 15 }} />
-										</Pressable><Button title="Exit App" onPress={() => handleExitApp({ navigation })} /> */}
-									{/* <MaterialIcons name={'exit-to-app'} size={24} color={'tintColorLight'} style={{ marginLeft: 10, marginBottom: 20 }} /> */}
-							</View>
+					<View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
+						<View style={{ flexDirection: 'column' }}>
+							<Text style={styles.labelPerfil}>E-mail</Text>
+							<Text style={styles.infoPerfil}>mariana@alura.com.br</Text>
+							{/* <EmailForm /> */}
 						</View>
+						<View style={{ flexDirection: "row" }}>
+								<MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
+						</View>
+					</View>
+
+					<View style={styles.separator} lightColor="#313131" darkColor="rgba(255,255,255,0.1" />
+
+					<View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
+						<View style={{ flexDirection: 'column' }}>
+							<Text style={styles.labelPerfil}>Telefone</Text>
+							<Text style={styles.infoPerfil}>(21) 23782-9988</Text>
+						</View>
+						<View style={{ flexDirection: "row" }}>
+								<MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
+						</View>
+					</View>
+
+					<View style={styles.separator} lightColor="#313131" darkColor="rgba(255,255,255,0.1" />
+
+					<View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
+						<View style={{ flexDirection: 'column' }}>
+							<Text style={styles.labelPerfil}>Senha</Text>
+							<Text style={styles.infoPerfil}>***********</Text>
+						</View>
+						<View style={{ flexDirection: "row" }}>
+								<MaterialIcons name={'chevron-right'} size={24} color={'#33EEDD'} style={{ marginLeft: 10, marginBottom: 20 }} />
+						</View>
+					</View>
+
+					<View style={styles.separator} lightColor="#313131" darkColor="rgba(255,255,255,0.1" />
+
+					<View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
+						<View style={{ flexDirection: 'column' }}>
+							<Text style={styles.infoPerfil}>Sair da minha conta</Text>
+						</View>
+						<View style={{ flexDirection: "row" }}>
+								<ExitApp />
+								{/* <Pressable
+									onPress={() => navigation.navigate('Modal2')}
+									style={({ pressed }) => ({
+										opacity: pressed ? 0.5 : 1,
+									})}>
+									<MaterialIcons
+										name="info-outline"
+										size={20}
+										// color={Colors[colorScheme].text}
+										style={{ marginRight: 15 }} />
+									</Pressable><Button title="Exit App" onPress={() => handleExitApp({ navigation })} /> */}
+								{/* <MaterialIcons name={'exit-to-app'} size={24} color={'tintColorLight'} style={{ marginLeft: 10, marginBottom: 20 }} /> */}
+						</View>
+					</View>
 				</ScrollView>
 			</View>
 		);
