@@ -1764,6 +1764,17 @@
     webpack-dev-server "^4.11.1"
     webpack-manifest-plugin "^4.1.1"
 
+"@expo/websql@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@expo/websql/-/websql-1.0.1.tgz#fff0cf9c1baa1f70f9e1d658b7c39a420d9b10a9"
+  integrity sha512-H9/t1V7XXyKC343FJz/LwaVBfDhs6IqhDtSYWpt8LNSQDVjf5NvVJLc5wp+KCpRidZx8+0+YeHJN45HOXmqjFA==
+  dependencies:
+    argsarray "^0.0.1"
+    immediate "^3.2.2"
+    noop-fn "^1.0.0"
+    pouchdb-collections "^1.0.1"
+    tiny-queue "^0.2.1"
+
 "@expo/xcpretty@^4.3.0":
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/@expo/xcpretty/-/xcpretty-4.3.1.tgz#e0a6a92d1e46ab5ac5e90d9a8e66ac1a2a2f5920"
@@ -2523,7 +2534,7 @@
     hermes-parser "0.19.1"
     nullthrows "^1.1.1"
 
-"@react-native/normalize-color@^2.1.0":
+"@react-native/normalize-color@*", "@react-native/normalize-color@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@react-native/normalize-color/-/normalize-color-2.1.0.tgz#939b87a9849e81687d3640c5efa2a486ac266f91"
   integrity sha512-Z1jQI2NpdFJCVgpY+8Dq/Bt3d+YUi1928Q+/CZm/oh66fzM0RUl54vvuXlPJKybH4pdCZey1eDTPaLHkMPNgWA==
@@ -3378,6 +3389,11 @@ argparse@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/argparse/-/argparse-2.0.1.tgz#246f50f3ca78a3240f6c997e8a9bd1eac49e4b38"
   integrity sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==
+
+argsarray@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/argsarray/-/argsarray-0.0.1.tgz#6e7207b4ecdb39b0af88303fa5ae22bda8df61cb"
+  integrity sha512-u96dg2GcAKtpTrBdDoFIM7PjcBA+6rSP0OR94MOReNRyUECL6MtQt5XXmRr4qrftYaef9+l5hcpO5te7sML1Cg==
 
 array-flatten@1.1.1:
   version "1.1.1"
@@ -4610,6 +4626,15 @@ depd@~1.1.2:
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   integrity sha512-7emPTl6Dpo6JRXOXjLRxck+FlLRX5847cLKEn00PLAgc3g2hTZZgr+e4c2v6QpSmLeFP3n5yUo7ft6avBK/5jQ==
 
+deprecated-react-native-prop-types@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/deprecated-react-native-prop-types/-/deprecated-react-native-prop-types-2.3.0.tgz#c10c6ee75ff2b6de94bb127f142b814e6e08d9ab"
+  integrity sha512-pWD0voFtNYxrVqvBMYf5gq3NA2GCpfodS1yNynTPc93AYA/KEMGeWDqqeUB6R2Z9ZofVhks2aeJXiuQqKNpesA==
+  dependencies:
+    "@react-native/normalize-color" "*"
+    invariant "*"
+    prop-types "*"
+
 destroy@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.2.0.tgz#4803735509ad8be552934c67df614f94e66fa015"
@@ -5086,6 +5111,13 @@ expo-splash-screen@~0.27.5:
   integrity sha512-9rdZuLkFCfgJBxrheUsOEOIW6Rp+9NVlpSE0hgXQwbTCLTncf00IHSE8/L2NbFyeDLNjof1yZBppaV7tXHRUzA==
   dependencies:
     "@expo/prebuild-config" "7.0.6"
+
+expo-sqlite@^14.0.6:
+  version "14.0.6"
+  resolved "https://registry.yarnpkg.com/expo-sqlite/-/expo-sqlite-14.0.6.tgz#6306ff523e6d0a27ec812b1897592269acacf4da"
+  integrity sha512-T3YNx7LT7lM4UQRgi8ml+cj0Wf3Ep09+B4CVaWtUCjdyYJIZjsHDT65hypKG+r6btTLLEd11hjlrstNQhzt5gQ==
+  dependencies:
+    "@expo/websql" "^1.0.1"
 
 expo-status-bar@~1.12.1:
   version "1.12.1"
@@ -5956,6 +5988,11 @@ image-size@^1.0.2:
   dependencies:
     queue "6.0.2"
 
+immediate@^3.2.2:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.3.0.tgz#1aef225517836bcdf7f2a2de2600c79ff0269266"
+  integrity sha512-HR7EVodfFUdQCTIeySw+WDRFJlPcLOJbXfwwZ7Oom6tjsvZ3bOkCDJHehQC3nxJrv7+f9XecwazynjU8e4Vw3Q==
+
 import-fresh@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/import-fresh/-/import-fresh-2.0.0.tgz#d81355c15612d386c61f9ddd3922d4304822a546"
@@ -6021,7 +6058,7 @@ internal-ip@4.3.0:
     default-gateway "^4.2.0"
     ipaddr.js "^1.9.0"
 
-invariant@^2.2.4:
+invariant@*, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
@@ -7755,6 +7792,11 @@ node-stream-zip@^1.9.1:
   resolved "https://registry.yarnpkg.com/node-stream-zip/-/node-stream-zip-1.15.0.tgz#158adb88ed8004c6c49a396b50a6a5de3bca33ea"
   integrity sha512-LN4fydt9TqhZhThkZIVQnF9cwjU3qmUH9h78Mx/K7d3VvfRqqwthLwJEUOEL0QPZ0XQmNN7be5Ggit5+4dq3Bw==
 
+noop-fn@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/noop-fn/-/noop-fn-1.0.0.tgz#5f33d47f13d2150df93e0cb036699e982f78ffbf"
+  integrity sha512-pQ8vODlgXt2e7A3mIbFDlizkr46r75V+BJxVAyat8Jl7YmI513gG5cfyRL0FedKraoZ+VAouI1h4/IWpus5pcQ==
+
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
@@ -8475,6 +8517,11 @@ postcss@~8.4.32:
     picocolors "^1.0.1"
     source-map-js "^1.2.0"
 
+pouchdb-collections@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/pouchdb-collections/-/pouchdb-collections-1.0.1.tgz#fe63a17da977611abef7cb8026cb1a9553fd8359"
+  integrity sha512-31db6JRg4+4D5Yzc2nqsRqsA2oOkZS8DpFav3jf/qVNBxusKa2ClkEIZ2bJNpaDbMfWtnuSq59p6Bn+CipPMdg==
+
 prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
@@ -8553,7 +8600,7 @@ prompts@^2.0.1, prompts@^2.2.1, prompts@^2.3.2, prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.5.10, prop-types@^15.8.1:
+prop-types@*, prop-types@^15.5.10, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -8704,6 +8751,20 @@ react-is@^17.0.1, react-is@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
+
+react-native-root-siblings@^4.0.0:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-root-siblings/-/react-native-root-siblings-4.1.1.tgz#b7742db7634a87f507eb99a5fd699c4f10c46ab0"
+  integrity sha512-sdmLElNs5PDWqmZmj4/aNH4anyxreaPm61c4ZkRiR8SO/GzLg6KjAbb0e17RmMdnBdD0AIQbS38h/l55YKN4ZA==
+
+react-native-root-toast@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/react-native-root-toast/-/react-native-root-toast-3.6.0.tgz#bd65e9af72f23f66826162c3021c18d05a0ef48e"
+  integrity sha512-HgZ2OS84ZbInJGuejGghBCPmBwoSBuJFO/bAJoR/NS6rCl9eiXSRegIG/gLEo7lH9BijeA63is1noUqR8Y1DpQ==
+  dependencies:
+    deprecated-react-native-prop-types "^2.3.0"
+    prop-types "^15.5.10"
+    react-native-root-siblings "^4.0.0"
 
 react-native-safe-area-context@4.10.5:
   version "4.10.5"
@@ -10020,6 +10081,11 @@ thunky@^1.0.2:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/thunky/-/thunky-1.1.0.tgz#5abaf714a9405db0504732bbccd2cedd9ef9537d"
   integrity sha512-eHY7nBftgThBqOyHGVN+l8gF0BucP09fMo0oO/Lb0w1OF80dJv+lDVpXG60WMQvkcxAkNybKsrEIE3ZtKGmPrA==
+
+tiny-queue@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/tiny-queue/-/tiny-queue-0.2.1.tgz#25a67f2c6e253b2ca941977b5ef7442ef97a6046"
+  integrity sha512-EijGsv7kzd9I9g0ByCl6h42BWNGUZrlCSejfrb3AKeHC33SGbASu1VDf5O3rRiiUOhAC9CHdZxFPbZu0HmR70A==
 
 tmp@^0.0.33:
   version "0.0.33"
