@@ -1,53 +1,94 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button } from 'react-native';
+import { TextInput, Button, StyleSheet } from 'react-native';
+import { Text, View } from '../components/Themed';
 import * as FileSystem from 'expo-file-system';
+import Toast from 'react-native-root-toast';
+import ImagePicker from './ImagePicker';
 
 export default function EmailForm() {
   const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [password, setPassword] = useState('');
 
-  
-  
-  
-  const saveEmail = async () => {
-      try {
-          const fileInfo = await FileSystem.getInfoAsync(FileSystem.documentDirectory + 'email.json');
-          let data: string[] = [];
-          
-          if (!fileInfo.exists) {
-              await FileSystem.writeAsStringAsync(FileSystem.documentDirectory + 'email.json', JSON.stringify(data));
-            } else {
-                const fileContents = await FileSystem.readAsStringAsync(FileSystem.documentDirectory + 'email.json');
-                data = JSON.parse(fileContents);
-            }
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            function validateEmail(email: string) {
-              return emailRegex.test(email);
-            }
-            
-            console.log(validateEmail('example@mail.com')); // true
-            console.log(validateEmail('example@mail.')); // false
-            console.log(validateEmail('example@mail.c')); // false
-            console.log('print JSON' + data );
+  const saveForm = async () => {
+    try {
+      const fileInfo = await FileSystem.getInfoAsync(FileSystem.documentDirectory + 'formData.json');
+      let data: { email: string; name: string; phone: string; password: string }[] = [];
 
-            if (emailRegex.test(email) == true) {
-                console.log(email)
-                data.push(email);
-                await FileSystem.writeAsStringAsync(FileSystem.documentDirectory + 'email.json', JSON.stringify(data));
-                setEmail('');
-            } else {
-                console.log('verifique o email digitado, tente algo como "example@mail.com" ')
-            }
-            
-            
+      if (!fileInfo.exists) {
+        await FileSystem.writeAsStringAsync(FileSystem.documentDirectory + 'formData.json', JSON.stringify(data));
+      } else {
+        const fileContents = await FileSystem.readAsStringAsync(FileSystem.documentDirectory + 'formData.json');
+        data = JSON.parse(fileContents);
+      }
 
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const phoneRegex = /^\d{10}$/;
 
+      function validateEmail(email: string) {
+        return emailRegex.test(email);
+      }
+
+      function validatePhone(phone: string) {
+        return phoneRegex.test(phone);
+      }
+
+      if (validateEmail(email) && validatePhone(phone)) {
+        data.push({ email, name, phone, password });
+        await FileSystem.writeAsStringAsync(FileSystem.documentDirectory + 'formData.json', JSON.stringify(data));
+        setEmail('');
+        setName('');
+        setPhone('');
+        setPassword('');
+      } else {
+        let toast = Toast.show('Please check the entered data. Ensure email and phone number are valid.', {
+          duration: Toast.durations.LONG,
+        });
+
+        setTimeout(function hideToast() {
+          Toast.hide(toast);
+        }, 5000);
+      }
     } catch (err) {
       console.error(err);
     }
+
+    console.log(`'Form data saved!'` + name +  phone + email +  password);
+    let toast2 = Toast.show(`'Form data saved!'` + name +  phone + email +  password, {
+      duration: Toast.durations.LONG,
+    });
+
+    setTimeout(function hideToast() {
+      Toast.hide(toast2);
+    }, 5000);
+
   };
 
   return (
     <View>
+      <View style={{ flexDirection: 'row',  width: 220, marginLeft: 16, marginTop: 16, marginBottom: 32, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, justifyContent: 'space-around', }}>
+        <ImagePicker />
+        <View style={{ flexDirection: 'column', marginLeft: 36 }}>
+          <Text style={styles.title}>Mariana Q.</Text>
+          <Text style={styles.videoInfo}>33 videos assistidos</Text>
+        </View>
+      </View>
+      <Text style={styles.tabSelected} >Informações pessoais</Text>
+      <View style={styles.separator} lightColor="#313131" darkColor="rgba(255,255,255,0.1" />
+      <TextInput
+        placeholder="Enter name"
+        value={name}
+        onChangeText={setName}
+        style={{ borderWidth: 1, borderColor: 'gray', padding: 10, marginBottom: 10 }}
+      />
+      <TextInput
+        placeholder="Enter phone number"
+        value={phone}
+        onChangeText={setPhone}
+        keyboardType="phone-pad"
+        style={{ borderWidth: 1, borderColor: 'gray', padding: 10, marginBottom: 10 }}
+      />
       <TextInput
         placeholder="Enter email address"
         value={email}
@@ -56,9 +97,107 @@ export default function EmailForm() {
         autoCapitalize="none"
         autoComplete="email"
         autoCorrect={false}
-        style={{ borderWidth: 1, borderColor: 'gray', padding: 10 }}
+        style={{ borderWidth: 1, borderColor: 'gray', padding: 10, marginBottom: 10 }}
       />
-      <Button title="Save" onPress={saveEmail} />
+      <TextInput
+        placeholder="Enter password"
+        value={password}
+        onChangeText={setPassword}
+        secureTextEntry
+        style={{ borderWidth: 1, borderColor: 'gray', padding: 10, marginBottom: 10 }}
+      />
+      <Button title="Save" onPress={saveForm} />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+      flex: 1,
+      paddingLeft: 16,
+      paddingRight: 16,
+      // backgroundColor: '#FAFAFA',
+      // alignItems: 'center',
+      // justifyContent: 'center',
+  },
+  card:{
+    marginBottom: 48,
+    marginLeft: 16,
+    maxWidth: 350, 
+  },
+  flexDirection:{
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  inner: {
+      padding: 24,
+      flex: 1,
+      justifyContent: 'space-around',
+    },
+    header: {
+      fontSize: 36,
+      marginBottom: 48,
+    },
+    tabSelected: {
+      fontFamily: 'quicksand-bold',
+      fontSize: 16,
+      // color: '#313131',
+      marginRight: 22,
+      marginBottom: 0,
+    },
+    textInput: {
+      height: 40,
+      borderColor: '#000000',
+      borderBottomWidth: 1,
+      marginBottom: 36,
+    },
+    btnContainer: {
+      backgroundColor: 'white',
+      marginTop: 12,
+    },
+  title: {
+    fontFamily: 'quicksand-bold',
+      fontSize: 22,
+      lineHeight: 28,
+      marginTop: 10,
+      marginBottom: 8,
+      // fontWeight: 'bold',
+      // color: 'black'
+  },
+  videoInfo:{
+    fontFamily: 'quicksand-regular',
+    fontSize: 14,
+    lineHeight: 18,
+    // margin: 0,
+    // color: 'black'
+  },
+  labelPerfil:{
+    fontFamily: 'quicksand-light',
+    fontSize: 12,
+    lineHeight: 15,
+    marginBottom: 4,
+    // opacity: 70,
+  },
+  infoPerfil:{
+    fontFamily: 'quicksand-regular',
+    fontSize: 16,
+    lineHeight: 20,
+    margin: 0,
+    // opacity: 50,
+  },
+  separator: {
+      marginVertical: 16,
+      height: 1,
+      opacity: 0.1,
+  },
+  perfil: {
+      position: "relative",
+      height: 90,
+      width: 90,
+      borderBottomLeftRadius: 50,
+      borderBottomRightRadius: 50,
+      borderTopLeftRadius: 50,
+      borderTopRightRadius: 50
+
+  },
+});
